@@ -18,6 +18,13 @@ return new class extends Migration
             $table->string('Nome')->nullable();
             $table->string('Sigla')->nullable();
             $table->string('image');
+            $table->string('Endereco');
+            $table->string('Cep');
+            $table->string('Mapa_Google');
+            $table->string('Email');
+            $table->string('Horario_funcionamento');
+            $table->string('Site');
+            $table->string('Outras_info');
 
             $table->foreignId('cidade_id')->constrained('cidade')->onDelete('cascade');
 

@@ -20,32 +20,47 @@
                      <div class="col-md-6">
                          <div class="card mb-4">
                              <div class="card-body">
-                                 <h5 class="card-title text-center">Descrição do Bem: <b> <u>
+
+                                {!! Form::open([
+                                    'route' => ['trdigital.pesquisa_mercadologica_destroy', $pesquisa->id],
+                                    'method' => 'delete',
+                                ]) !!}
+                                <button type="submit" class="btn btn-danger position-absolute top-0 end-0"> <i class="bi bi-trash me-1">
+                                </i></span></button>
+                                {!! Form::close() !!}
+                                {{-- <a
+                                href="{{ route('trdigital.edit', $pesquisa->id) }}">
+                                <span
+                                    class="badge bg-danger custom-badge position-absolute top-0 end-0">
+                                    <i class="bi bi-trash me-1">Excluir
+                                    </i></span> </a> --}}
+                                 <h5 class="card-title text-center">Descrição do Item: <b> <u>
                                              {{ $pesquisa->Descricao_bem ?? '' }} </u></b></h5>
                                  @php
                                      $valorTotal = 0; // Inicializa o valor total
                                      $numRegistros = count($pesquisa->pesquisa_mercadologica_pivots); // Obtém o número total de registros
                                  @endphp
                                  @foreach ($pesquisa->pesquisa_mercadologica_pivots as $pivot)
-                                     <h6 class="card-subtitle mb-2 text-dark">Empresa: <b
-                                             class="text-primary">{{ $pivot->Empresa ?? '' }}</b></h6>
-                                     <h6 class="card-subtitle mb-2 text-primary">Valor Unid.: <b
-                                             class="text-danger">R$ {{ $pivot->Valor ?? '' }}</b></h6>
-                                     <h6 class="card-subtitle mb-2 text-primary">Quantidade: <b
+                                 
+                                     <h5 class="card-subtitle mb-2 text-dark"><i class="bi bi-building">
+                                    </i> <i> <b class="text-primary"> <small>Empresa: </small> {{ $pivot->Empresa ?? '' }} </i> </b></h5>
+
+                                     <h6 class="card-subtitle mb-2 text-primary"><small>Valor Unid.: </small> <b class="text-danger">R$ {{ $pivot->Valor ?? '' }}</small></b></h6>
+                                     <h6 class="card-subtitle mb-2 text-primary"><small>Quantidade:</small> <b
                                              class="text-dark">{{ $pesquisa->Qtd ?? '' }}</b></h6>
-                                     <h6 class="card-subtitle mb-2 text-primary">Total: <b
+                                     <h6 class="card-subtitle mb-2 text-primary"><small>Total:</small> <b
                                              class="text-danger">R$
                                              {{ $pivot->Valor * $pesquisa->Qtd }} </b></h6>
                                      @php
                                          $valorTotal += $pivot->Valor * $pesquisa->Qtd; // Adiciona o valor total atual
                                      @endphp
-                                     <h6 class="card-subtitle mb-2 text-dark">Comprovante:
+                                     <h6 class="card-subtitle mb-2 text-primary"><small>Comprovante: </small>
                                          @if ($pivot->Anexo == '')
                                              <i class="bi bi-file-earmark-pdf-fill text-danger"></i>
-                                             Documento não enviado
+                                             <a class="text-danger"> Documento não enviado </a>
                                          @else
                                              <i class="bi bi-file-earmark-pdf-fill text-success"></i>
-                                             Documento enviado
+                                             <a class="text-success"> Documento  enviado </a>
                                              <a class="btn btn-primary btn-sm"
                                                  href="{{ asset('storage/' . $pivot->Anexo) }}"
                                                  target="_blank">
@@ -61,7 +76,7 @@
                                              Editar
                                          </button>
                                          <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                             data-bs-target="#excluir_pesquisamercadologica{{ $pesquisa->id ?? '' }}"
+                                             data-bs-target="#excluir_pesquisamercadologica{{ $pesquisa->id}}"
                                              data-bs-meta-id="{{ $pesquisa->id ?? '' }}">
                                              Excluir
                                          </button>
@@ -69,8 +84,12 @@
                                  @endforeach
 
                                  @php
+                                 if ($numRegistros > 0) {
                                      $valorTotalMedio = $valorTotal / $numRegistros;
-                                 @endphp
+                                 } else {
+                                     $valorTotalMedio = 0; // Defina um valor padrão ou outro valor apropriado
+                                 }
+                             @endphp
 
                                  <h6 class="card-subtitle mb-2 text-primary">Valor Total Médio: <b
                                          class="text-danger"> R$ {{ number_format($valorTotalMedio, 2) }} </b>

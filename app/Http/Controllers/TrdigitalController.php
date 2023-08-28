@@ -567,19 +567,52 @@ class TrdigitalController extends Controller
         return redirect()->back();
     }
     
-    public function pesquisa_mercadologica_destroy ($id)
-    {
-        $pesquisa_mercadologica = Pesquisa_mercadologica_pivot::find($id);
 
-        if (!$pesquisa_mercadologica) {
-            // Lógica de tratamento se a meta não for encontrada
+    public function pesquisa_mercadologica_update(Request $request, $id)
+{
+    $pesquisa_mercadologica = Pesquisa_mercadologica::create([
+        'n_processo_id' => $id,
+        'Descricao_bem' => $request->Descricao_bem,
+        'Qtd' => $request->Qtd,
+    ]);
+
+    foreach ($request->Empresa as $key => $empresa) {
+        $pivotData = [
+            'Empresa' => $empresa,
+            'Valor' => $request->Valor[$key],
+        ];
+
+        if ($request->hasFile('Anexo') && isset($request->file('Anexo')[$key]) && $request->file('Anexo')[$key]->isValid()) {
+            $file = $request->file('Anexo')[$key];
+            $filePath = $file->store('pdfs/pesquisa_mercadologica', 'public');
+            $pivotData['Anexo'] = $filePath;
+        } else {
+            $pivotData['Anexo'] = null; // Valor padrão se não houver anexo
         }
 
-        $pesquisa_mercadologica->delete();
-        return redirect()->back()->with('delete', 'Meta excluída com sucesso!');
+        $pivot = $pesquisa_mercadologica->pesquisa_mercadologica_pivots()->create($pivotData);
+
+        // Pode ser útil se você desejar adicionar algo mais para o pivot, como associar com outros modelos
+        // Exemplo: $pivot->outraRelacao()->associate($outraRelacao);
+        // $pivot->save();
     }
 
+    return redirect()->back();
+}
 
+    public function pesquisa_mercadologica_destroy($pivotId)
+    {
+        $pivotItem = Pesquisa_mercadologica_pivot::find($pivotId);
+    
+        if (!$pivotItem) {
+            // Lógica de tratamento se o item do pivot não for encontrado
+        }
+    
+        $pivotItem->delete();
+    
+        return redirect()->back(); // Ou redirecionar para qualquer outra página desejada após a exclusão
+    }
+    
 
     public function show($id)
     {

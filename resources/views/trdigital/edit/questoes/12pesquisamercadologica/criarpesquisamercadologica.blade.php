@@ -35,11 +35,11 @@
                                     <div class="col-md-8">
                                         <div class="form-floating">
                                             {!! Form::text('Descricao_bem', null, [
-                                                'placeholder' => 'Descrição do bem',
+                                                'placeholder' => 'Descrição do item',
                                                 'class' => 'form-control',
                                                 'id' => 'floatingName',
                                             ]) !!}
-                                            <label for="floatingName">Descrição do bem</label>
+                                            <label for="floatingName">Descrição do item</label>
                                         </div>
 
                                     </div>

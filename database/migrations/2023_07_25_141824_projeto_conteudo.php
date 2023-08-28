@@ -21,19 +21,19 @@ return new class extends Migration
             $table->string('Titulo_Projeto_Conteudo_sit')->nullable();  
             $table->string('Titulo_Projeto_Conteudo_obs')->nullable();  
 
-            $table->string('Objeto_Projeto_Conteudo')->nullable();  
+            $table->longText('Objeto_Projeto_Conteudo')->nullable();  
             $table->string('Objeto_Projeto_Conteudo_sit')->nullable();  
             $table->string('Objeto_Projeto_Conteudo_obs')->nullable();  
 
-            $table->string('Obj_Geral_Projeto_Conteudo')->nullable();  
+            $table->longText('Obj_Geral_Projeto_Conteudo')->nullable();  
             $table->string('Obj_Geral_Projeto_Conteudo_sit')->nullable();  
             $table->string('Obj_Geral_Projeto_Conteudo_obs')->nullable();                          
             
-            $table->string('Obj_especifico_Projeto_Conteudo')->nullable();  
+            $table->longText('Obj_especifico_Projeto_Conteudo')->nullable();  
             $table->string('Obj_especifico_Projeto_Conteudo_sit')->nullable();  
             $table->string('Obj_especifico_Projeto_Conteudo_obs')->nullable();  
             
-            $table->string('Justificativa_Projeto_Conteudo')->nullable();  
+            $table->longText('Justificativa_Projeto_Conteudo')->nullable();  
             $table->string('Justificativa_Projeto_Conteudo_sit')->nullable();  
             $table->string('Justificativa_Projeto_Conteudo_obs')->nullable();  
             
@@ -45,7 +45,7 @@ return new class extends Migration
             $table->longText('Diagnostico_Projeto_Conteudo_sit')->nullable();  
             $table->longText('Diagnostico_Projeto_Conteudo_obs')->nullable();  
             
-            $table->string('Importancia_Projeto_Conteudo')->nullable();  
+            $table->longText('Importancia_Projeto_Conteudo')->nullable();  
             $table->string('Importancia_Projeto_Conteudo_sit')->nullable();  
             $table->string('Importancia_Projeto_Conteudo_obs')->nullable();  
             
@@ -53,19 +53,19 @@ return new class extends Migration
             $table->longText('Caracterizacao_Projeto_Conteudo_sit')->nullable();  
             $table->longText('Caracterizacao_Projeto_Conteudo_obs')->nullable();  
             
-            $table->string('Publico_Alvo_Interno_Projeto_Conteudo')->nullable();  
+            $table->longText('Publico_Alvo_Interno_Projeto_Conteudo')->nullable();  
             $table->string('Publico_Alvo_Interno_Projeto_Conteudo_sit')->nullable();  
             $table->string('Publico_Alvo_Interno_Projeto_Conteudo_obs')->nullable();  
             
-            $table->string('Publico_Alvo_Externo_Projeto_Conteudo')->nullable();  
+            $table->longText('Publico_Alvo_Externo_Projeto_Conteudo')->nullable();  
             $table->string('Publico_Alvo_Externo_Projeto_Conteudo_sit')->nullable();  
             $table->string('Publico_Alvo_Externo_Projeto_Conteudo_obs')->nullable();  
             
-            $table->string('Problemas_Projeto_Conteudo')->nullable();  
+            $table->longText('Problemas_Projeto_Conteudo')->nullable();  
             $table->string('Problemas_Projeto_Conteudo_sit')->nullable();  
             $table->string('Problemas_Projeto_Conteudo_obs')->nullable();  
             
-            $table->string('Resultados_Projeto_Conteudo')->nullable();  
+            $table->longText('Resultados_Projeto_Conteudo')->nullable();  
             $table->string('Resultados_Projeto_Conteudo_sit')->nullable();  
             $table->string('Resultados_Projeto_Conteudo_obs')->nullable();  
             
@@ -75,7 +75,7 @@ return new class extends Migration
             
             $table->date('Fim_Projeto_Conteudo')->nullable();  
             $table->date('Fim_Projeto_Conteudo_sit')->nullable();  
-            $table->date('Fim_Projeto_Conteudo_obs')->nullable();  
+            $table->string('Fim_Projeto_Conteudo_obs')->nullable();  
             
             $table->string('N_Emenda_Projeto_Conteudo')->nullable();  
             $table->string('N_Emenda_Projeto_Conteudo_sit')->nullable();  

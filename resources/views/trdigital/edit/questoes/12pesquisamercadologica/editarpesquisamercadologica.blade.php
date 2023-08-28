@@ -1,5 +1,7 @@
 <!-- Vertically centered Modal -->
 {!! Form::close() !!}
+@foreach ($pesquisa_mercadologica as $pesquisa)
+@foreach ($pesquisa->pesquisa_mercadologica_pivots as $pivot)
 
 <div class="modal fade" id="editar_pesquisamercadologica{{ $pivot->id ?? '' }}Editar" tabindex="-1">
 
@@ -13,7 +15,7 @@
             </div>
             <div class="modal-body">
 
-                     {{-- {!! Form::open(['method' => 'PUT', 'route' => ['trdigital.pesquisa_mercadologica', $obras_equipamentos->id]]) !!} --}}
+                      {!! Form::open(['method' => 'PUT', 'route' => ['trdigital.pesquisa_mercadologica_update', $pesquisa->id]]) !!} 
 
 
                 <br>
@@ -34,11 +36,11 @@
                                     <div class="col-md-8">
                                         <div class="form-floating">
                                             {!! Form::text('Descricao_bem', $pesquisa->Descricao_bem, [
-                                                'placeholder' => 'Descrição do bem',
+                                                'placeholder' => 'Descrição do item',
                                                 'class' => 'form-control',
                                                 'id' => 'floatingName',
                                             ]) !!}
-                                            <label for="floatingName">Descrição do bem</label>
+                                            <label for="floatingName">Descrição do item</label>
                                         </div>
 
                                     </div>
@@ -127,3 +129,5 @@
         </div>
     </div>
 </div>
+@endforeach
+@endforeach

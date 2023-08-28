@@ -11,7 +11,8 @@ class Orgaos extends Model
     use HasFactory;
     protected $table = 'orgaos';
     protected $fillable = [
-        'Nome', 'Sigla','image',
+        'Nome', 'Sigla','image','Endereco','Cep','Mapa_Google',
+        'Email','Horario_funcionamento','Site','Outras_info','cidade_id'
      ];
 
           public function recibo()

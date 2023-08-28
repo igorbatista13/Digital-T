@@ -12,7 +12,7 @@ $processoCount_nao_finalizada = session()->get('processoCount_nao_finalizada');
 
   
     <div class="pagetitle">
-        <h1>Dashboard</h1>
+        <h1>Painel Gerencial</h1>
         <nav>
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Início</a></li>
@@ -25,46 +25,27 @@ $processoCount_nao_finalizada = session()->get('processoCount_nao_finalizada');
     <div class="row">
 
 
-        <div class="col-xl-3 col-md-6 col-sm-12">
+        <div class="col-xl-2 col-md-2 col-sm-4">
             <div class="card">
                 <div class="card-content">
-                    <img class="card-img img-fluid" src="{{asset('/images/painel/dre.png')}}" width="100px" alt="Card image">
+                    <img class="card-img" src="{{asset('/images/brasao_mt.png')}}" width="50px" >
                     <div class="card-img-overlay overlay-dark bg-overlay d-flex justify-content-between flex-column">
                         <div class="overlay-content">
-                            <h4 class="card-title mb-50">Cadastro de Entidades </h4>
-                            <p class="card-text text-ellipsis">
-                                Cadastro e Consulta Entidades.
-                            </p>
+                            <h4 class="card-title mb-50">Órgãos do Estado</h4>
+                        
                         </div>
                         <div class="overlay-status">
-                            <a href="{{asset('/entidades')}}" class="btn btn-primary btn-sm">Clique aqui </a>
+                            <a href="{{asset('/orgaos')}}" class="btn btn-primary btn-sm">Clique aqui </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-md-6 col-sm-12">
+
+        <div class="col-xl-2 col-md-2 col-sm-2">
             <div class="card">
                 <div class="card-content">
-                    <img class="card-img img-fluid" src="{{asset('/images/painel/dre.png')}}" width="100px" alt="Card image">
-                    <div class="card-img-overlay overlay-dark bg-overlay d-flex justify-content-between flex-column">
-                        <div class="overlay-content">
-                            <h4 class="card-title mb-50">Cadastro de Entidades Tipo </h4>
-                            <p class="card-text text-ellipsis">
-                                Cadastro e Consulta Entidades Tipo.
-                            </p>
-                        </div>
-                        <div class="overlay-status">
-                            <a href="{{asset('/entidades')}}" class="btn btn-primary btn-sm">Clique aqui </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-md-6 col-sm-12">
-            <div class="card">
-                <div class="card-content">
-                    <img class="card-img img-fluid" src="{{asset('/images/painel/mapabrasil.jpg')}}" width="200px" alt="Card image">
+                    <img class="card-img img-fluid" src="{{asset('/images/brasao_mt.png')}}" width="200px" alt="Card image">
                     <div class="card-img-overlay overlay-dark d-flex justify-content-between flex-column">
                         <div class="overlay-content">
                             <h4 class="card-title mb-50">Estados</h4>
@@ -84,17 +65,15 @@ $processoCount_nao_finalizada = session()->get('processoCount_nao_finalizada');
 
 
 
-<div class="col-xl-3 col-md-6 col-sm-12">
+<div class="col-xl-2 col-md-2 col-sm-4">
             <div class="card">
                 <div class="card-content">
-                    <img class="card-img img-fluid" src="{{asset('/images/painel/cidades.jpg')}}" alt="Card image">
+                    <img class="card-img img-fluid" src="{{asset('/images/brasao_mt.png')}}" alt="Card image">
                     <div class="card-img-overlay overlay-dark d-flex justify-content-between flex-column">
                         <div class="overlay-content">
-                            <h4 class="card-title mb-50">Cidade</h4>
+                            <h4 class="card-title mb-50">Cidades</h4>
 
-                            <p class="card-text text-ellipsis">
-                                Consulta de Cidades.
-                            </p>
+                          
                         </div>
                         <div class="overlay-status">
                             <a href="{{asset('/cidade')}}" class="btn btn-primary btn-sm">Clique aqui </a>
@@ -103,10 +82,12 @@ $processoCount_nao_finalizada = session()->get('processoCount_nao_finalizada');
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-md-6 col-sm-12">
+
+
+        <div class="col-xl-2 col-md-6 col-sm-12">
             <div class="card">
                 <div class="card-content">
-                    <img class="card-img img-fluid" src="{{asset('/images/painel/escolas.jpg')}}" alt="Card image">
+                    <img class="card-img img-fluid" src="{{asset('/images/brasao_mt.png')}}" alt="Card image">
                     <div class="card-img-overlay overlay-dark d-flex justify-content-between flex-column">
                         <div class="overlay-content">
                             <h4 class="card-title mb-50">Questões do Fomulário</h4>
@@ -115,50 +96,64 @@ $processoCount_nao_finalizada = session()->get('processoCount_nao_finalizada');
                             </p>
                         </div>
                         <div class="overlay-status text-right">
-                            <a href="{{asset('/questoes')}}" class="btn btn-primary btn-sm">Clique aqui </a>
+                            <a href="#" class="btn btn-primary btn-sm">Clique aqui </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-md-6 col-sm-12">
+        <div class="col-xl-2 col-md-6 col-sm-12">
             <div class="card">
                 <div class="card-content">
-                    <img class="card-img img-fluid" src="{{asset('/images/painel/cating.jpg')}}" alt="Card image">
+                    <img class="card-img img-fluid" src="{{asset('/images/brasao_mt.png')}}" alt="Card image">
                     <div class="card-img-overlay overlay-dark bg-overlay d-flex justify-content-between flex-column">
                         <div class="overlay-content">
-                            <h4 class="card-title mb-50">Categoria dos Ingredientes</h4>
-                            <p class="card-text text-ellipsis">
-                                Cadastro e Consulta de Categoria Ingredientes.
-                            </p>
+                            <h4 class="card-title mb-50">Usuários do Sistema</h4>
+                
                         </div>
                         <div class="overlay-status">
-                            <a href="{{asset('/catingrediente')}}" class="btn btn-primary btn-sm">Clique aqui </a>
+                            <a href="{{asset('/users')}}" class="btn btn-primary btn-sm">Clique aqui </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-md-6 col-sm-12">
+        <div class="col-xl-2 col-md-6 col-sm-12">
             <div class="card">
                 <div class="card-content">
-                    <img class="card-img img-fluid" src="{{asset('/images/painel/ingredientes.jpg')}}" alt="Card image">
+                    <img class="card-img img-fluid" src="{{asset('/images/brasao_mt.png')}}" alt="Card image">
                     <div class="card-img-overlay overlay-dark d-flex justify-content-between flex-column">
                         <div class="overlay-content">
-                            <h4 class="card-title mb-50">Cadastro de Ingredientes</h4>
+                            <h4 class="card-title mb-50">Perfis do Sistema</h4>
 
-                            <p class="card-text text-ellipsis">
-                                Cadastro e Consulta de Ingredientes.
-                            </p>
+                        
                         </div>
                         <div class="overlay-status text-right">
-                            <a href="{{asset('/insumo')}}" class="btn btn-primary btn-sm">Clique aqui </a>
+                            <a href="{{asset('/roles')}}" class="btn btn-primary btn-sm">Clique aqui </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     
+        <div class="col-xl-2 col-md-2 col-sm-4">
+            <div class="card">
+                <div class="card-content">
+                    <img class="card-img img-fluid" src="{{asset('/images/biblioteca.png')}}" width="100px" alt="Card image">
+                    <div class="card-img-overlay overlay-dark bg-overlay d-flex justify-content-between flex-column">
+                        <div class="overlay-content">
+                            <h4 class="card-title mb-50">Biblioteca, links e manuais </h4>
+                            <p class="card-text text-ellipsis">
+                            </p>
+                        </div>
+                        <div class="overlay-status">
+                            <a href="{{asset('/biblioteca')}}" class="btn btn-primary btn-sm">Clique aqui </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     </div></main>
 

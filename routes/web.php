@@ -29,7 +29,7 @@ use App\Http\Controllers\{
 
   TrdigitalController,   QuestoesController, MetasController
 };
-
+use App\Models\Biblioteca;
 
 Route::patch('/trdigital/metasstore/{id}',  [TrdigitalController::class, 'metasstore'])->name('trdigital.metasstore');
 Route::delete('/trdigital/metasstore/{id}', [TrdigitalController::class, 'metasstoredestroy'])->name('trdigital.metasstoredestroy');
@@ -58,7 +58,9 @@ Route::delete('/trdigital/obras_equipamento/{id}',  [TrdigitalController::class,
 
 Route::patch('/trdigital/pesquisa_mercadologica/{id}',  [TrdigitalController::class, 'pesquisa_mercadologica'])->name('trdigital.pesquisa_mercadologica');
 Route::put('/trdigital/pesquisa_mercadologica/{id}',  [TrdigitalController::class, 'pesquisa_mercadologica_update'])->name('trdigital.pesquisa_mercadologica_update');
+
 Route::delete('/trdigital/pesquisa_mercadologica/{id}',  [TrdigitalController::class, 'pesquisa_mercadologica_destroy'])->name('trdigital.pesquisa_mercadologica_destroy');
+
 
 
 
@@ -108,6 +110,7 @@ Route::resource('catingrediente',            CatingredientesController::class);
 Route::resource('insumo',                    InsumoController::class);
 Route::resource('inscricao',                 ReciboController::class);
 Route::resource('trdigital',                 TrdigitalController::class);
+Route::resource('biblioteca',                BibliotecaController::class);
 
 ////// PAINEL GERENCIAL (DASHBOARD)
 Route::get('/painel', [PainelGerencialController::class, 'dashboard']);
